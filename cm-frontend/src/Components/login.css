@@ -1,0 +1,79 @@
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: beige;
+    padding:100px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-card{
+    border: 1px solid rgb(167, 10, 10);
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 500px;
+    border-radius: 2em;
+    box-shadow: 3px 3px 10px rgb(182, 74, 74),
+                -3px -3px 10px rgb(190, 66, 66);
+}
+.form-container{
+    text-align: center;
+    min-height: 500px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.inner-container{
+    min-height: 25%;
+    margin: auto;
+}
+.inner-container>h5{
+    margin-bottom: 100px;
+}
+.visibility{
+    position: absolute;
+    right: 0%;
+    top: 20%;
+}
+.popupCard{
+    position: absolute;
+    width: 100vw;
+    height:100vh;
+    background-color: #424446;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+
+}
+.card-message{
+    width: 200px;
+    min-height: 150px;
+    background-color: rgb(156, 146, 8);
+    margin: auto;
+    text-align: center;
+    color: red;
+    font-weight: bolder;
+    border-radius: 10px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid red;
+    
+}
+.card-message>button{
+    background-color: aqua;
+    width: 100px;
+    border-radius: 10%;
+    border: 1px solid wheat;
+}
+

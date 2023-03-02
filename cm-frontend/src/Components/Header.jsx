@@ -11,7 +11,7 @@ function Header() {
       getData()
     }
     else {
-      axios(`http://localhost:5500/app/v1/contacts/${search}`, {
+      axios(`https://vast-puce-wasp.cyclic.app/app/v1/contacts/${search}`, {
         method: "get",
         headers: {
           "Authorization": JSON.parse(localStorage.getItem("token"))

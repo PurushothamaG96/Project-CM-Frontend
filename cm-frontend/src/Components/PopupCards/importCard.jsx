@@ -15,7 +15,7 @@ const ImportCard=(props)=>{
             //npm install papaparse
             let result = parse(text, {header:true})
             
-            axios('http://localhost:5500/app/v1/contacts',{
+            axios('https://vast-puce-wasp.cyclic.app/app/v1/contacts',{
             method:"post",
             headers:{
                 "Authorization":token
@@ -35,13 +35,14 @@ const ImportCard=(props)=>{
         onDragOver={(e)=>{e.preventDefault()}} 
         onDrop={handleCSVFile}>
                 <div>
-                    <h4>drag & drop file here</h4>
+                    <h4 className='text-primary'>Drag & Drop file here</h4>
                 </div>
                 <div>
                 <input type="file" onChange={(e)=>{console.log(e.target)}} style={{ display: 'none' }} />
                 </div>
+                <i className="fa fa-upload fa-5x text-primary "></i>
                 <div>
-                    <button>Cancel</button>
+                    <button onClick={()=>setInvokeImportcard(false)} className='btn btn-danger px-5'>Cancel</button>
                 </div>
         </div>
     );

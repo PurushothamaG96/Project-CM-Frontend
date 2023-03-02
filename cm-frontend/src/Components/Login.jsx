@@ -17,7 +17,7 @@ const Login=()=> {
     const handleSubmit = (e) => {
         e.preventDefault(e)
         if(data.password.length>5){
-            axios.post("http://localhost:5500/app/v1/login", data)
+            axios.post("https://vast-puce-wasp.cyclic.app/app/v1/login", data)
             .then(result => {
                 localStorage.setItem('token',JSON.stringify(result.data.message.token))
                 localStorage.setItem('userdetails',JSON.stringify(result.data.message.userdetails))

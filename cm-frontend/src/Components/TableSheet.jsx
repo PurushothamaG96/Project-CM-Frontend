@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { GlobalContext } from './DashBoard'
 import './All-section.css'
 const TableSheet=()=>{
-    const { contentArr,handleDelete, setContentArr} = useContext(GlobalContext)
+    const { contentArr, setContentArr,setDeleteArr,setInvokeDeleteCard} = useContext(GlobalContext)
 
     const handleCheckbox = (e)=>{
         const {id, checked} = e.target
@@ -54,7 +54,11 @@ const TableSheet=()=>{
                                     <td>{data?.email}</td>
                                     <td>{data?.phonenumber}</td>
                                     <td>{data?.country}</td>
-                                    <td><button className='btn' id={data._id}  onClick={(e)=>handleDelete(e)}><i className='fa fa-trash m-1 text-danger'></i></button></td>
+                                    <td><button className='btn' id={data._id}  onClick={(e)=>{
+                                        setInvokeDeleteCard(true)
+                                         setDeleteArr([data._id])
+                                    }
+                                       }><i className='fa fa-trash m-1 text-danger'></i></button></td>
                                 </tr>
                             )
                            

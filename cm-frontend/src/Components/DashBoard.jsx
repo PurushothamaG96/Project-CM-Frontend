@@ -8,7 +8,7 @@ import ImportCard from './PopupCards/importCard';
 import DeletePopUpCard from './PopupCards/DeletePopUpCard';
 export const GlobalContext = React.createContext()
 
-const DashBoard = (props) => {
+const DashBoard = () => {
     const [contentArr, setContentArr] = useState([])
     const [invokeImportCard, setInvokeImportcard] = useState(false)
     const [deleteArr, setDeleteArr] = useState([])
@@ -18,7 +18,7 @@ const DashBoard = (props) => {
         getData()
     }, [])
     function getData() {
-        axios('http://localhost:5500/app/v1/contacts', {
+        axios('https://vast-puce-wasp.cyclic.app/app/v1/contacts', {
             method: 'get',
             headers: {
                 "Authorization": token
@@ -30,11 +30,7 @@ const DashBoard = (props) => {
         })
     }
 
-    //handle Delete single
-    const handleDelete = (e) => {
-        setInvokeDeleteCard(true)
-        setDeleteArr([e.target.id])        
-    }
+    
     
     //handle delete multiple by checkbox
     const handleDeleteMany=()=>{
@@ -45,7 +41,7 @@ const DashBoard = (props) => {
         setDeleteArr(tempArr)
     }
     return (
-        <GlobalContext.Provider value={{deleteArr, setDeleteArr,handleDeleteMany,invokeDeleteCard, setInvokeDeleteCard, setContentArr, contentArr, getData, invokeImportCard, setInvokeImportcard, handleDelete }}>
+        <GlobalContext.Provider value={{deleteArr, setDeleteArr,handleDeleteMany,invokeDeleteCard, setInvokeDeleteCard, setContentArr, contentArr, getData, invokeImportCard, setInvokeImportcard }}>
             <div className='dashboard-container'>
                 <div className='header text-bg-secondary'>
                     <Header />

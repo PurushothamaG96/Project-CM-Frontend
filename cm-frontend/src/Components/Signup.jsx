@@ -23,7 +23,7 @@ const Signup=()=> {
             setValid(true)
         }
         else{
-            axios.post("http://localhost:5500/app/v1/register", data)
+            axios.post("https://vast-puce-wasp.cyclic.app/app/v1/register", data)
             .then(result=>{
                 setData({email:"", password:""})
                 setConfirmPassword("")

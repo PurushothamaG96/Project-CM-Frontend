@@ -9,7 +9,7 @@ const DeletePopUpCard=(props)=>{
     const handleDelete=async()=>{
        console.log(deleteArr)
         setInvokeDeleteCard(false);
-            axios('http://localhost:5500/app/v1/contacts', {
+            axios('https://vast-puce-wasp.cyclic.app/app/v1/contacts', {
             method:"delete",
             headers:{
                 "Content-Type":"Application/json",
@@ -25,10 +25,11 @@ const DeletePopUpCard=(props)=>{
     return(
         <div className='popup-card'>
             <div>
-                <h4>Delete Files</h4>
+                <h4 className='text-danger'>Delete Files</h4>
             </div>
+            <i className='fa fa-trash text-warning fa-5x'></i>
             <div>
-                <button className='btn btn-danger px-5 ' onClick={handleDelete}>OK</button>
+                <button className='btn btn-danger px-5' onClick={handleDelete}>OK</button>
             </div>
                     
         </div>
